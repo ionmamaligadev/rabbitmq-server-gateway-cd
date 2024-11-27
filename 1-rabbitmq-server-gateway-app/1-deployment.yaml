@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq-server-gateway
+  namespace: rabbitmq-server-gateway
+  labels:
+    app: rabbitmq-server-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq-server-gateway
+  template:
+    metadata:
+      labels:
+        app: rabbitmq-server-gateway
+    spec:
+      containers:
+        - name: rabbitmq-server-gateway
+          imagePullPolicy: Always
+          image: ionmamaligadev/rabbitmq-server-gateway:0.0.1
+          ports:
+            - containerPort: 5672

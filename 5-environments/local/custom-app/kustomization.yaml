@@ -1,0 +1,6 @@
+namespace: rabbitmq-server-gateway
+images:
+  - name: ionmamaligadev/rabbitmq-server-gateway
+    newTag: 0.0.1
+resources:
+  - ../../../4-rabbitmq-server-gateway-custom
